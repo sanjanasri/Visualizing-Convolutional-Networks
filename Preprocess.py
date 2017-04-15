@@ -60,14 +60,14 @@ def load_cifar101(HEIGHT, WIDTH, train_frac, test_frac):
         for file in files:
             filename = img_dir + category + '/' + file
             img = load_img(filename)
-            img = img.resize((227,227))
+            img = img.resize((HEIGHT,WIDTH))
             all_img.append(img)
             all_label.append(cat_to_ind[category])
             
     N_ALL = len(all_img)
     N_CATEGORY = len(np.unique(all_label))
 
-    x_all = np.empty((N_ALL, 227, 227, 3), np.uint8)
+    x_all = np.empty((N_ALL, HEIGHT, WIDTH, 3), np.uint8)
     y_all = np_utils.to_categorical(all_label, N_CATEGORY)
 
     for i in range(N_ALL):
