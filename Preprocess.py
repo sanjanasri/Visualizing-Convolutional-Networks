@@ -75,7 +75,8 @@ def load_cifar101(HEIGHT, WIDTH, train_frac, test_frac):
 
     # shuffle data
     ind_list = [i for i in range(N_ALL)]
-    shuffle(ind_list)
+    np.random.seed(1234)
+    np.random.shuffle(ind_list)
     x_all = x_all[ind_list, :,:,:]
     y_all = y_all[ind_list,]
     
