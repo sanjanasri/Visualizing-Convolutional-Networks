@@ -17,19 +17,23 @@ class LRN2D(Layer):
 
     def get_output(self, train):
         X = self.get_input(train)
-        b, ch, r, c = K.shape(X)
+        b, r, c, ch = K.shape(X)
+        
+        with open('a.txt', 'w') as f:
+            f.write(str(b) + ',' + str(r) + ',' + str(c) + ',' + str(ch) + '\n') 
+        
         half_n = self.n // 2
         input_sqr = K.square(X)
 
-        extra_channels = K.zeros((b, ch + 2 * half_n, r, c))
-        input_sqr = K.concatenate([extra_channels[:, :half_n, :, :],
+        extra_channels = K.zeros((b, r, c, ch + 2 * half_n))
+        input_sqr = K.concatenate([extra_channels[:, :, :, :half_n,],
                                    input_sqr,
-                                   extra_channels[:, half_n + ch:, :, :]],
-                                  axis=1)
+                                   extra_channels[:, :, :, half_n + ch:]], axis=1)
         scale = self.k
 
         for i in range(self.n):
-            scale += self.alpha * input_sqr[:, i:i + ch, :, :]
+            scale += self.alpha * input_sqr[:, :, :, i:i + ch]
+            
         scale = scale ** self.beta
 
         return X / scale
