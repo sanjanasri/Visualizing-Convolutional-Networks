@@ -1,0 +1,15 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Convolution Neural Networks}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Convolution Layer}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Pooling layers}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{Fully-Connected Layers}{section.2}% 5
+\BOOKMARK [1][-]{section.3}{AlexNet}{}% 6
+\BOOKMARK [1][-]{section.4}{ZFNet}{}% 7
+\BOOKMARK [1][-]{section.5}{Deconvolution}{}% 8
+\BOOKMARK [1][-]{section.6}{Evaluations}{}% 9
+\BOOKMARK [2][-]{subsection.6.1}{Dataset}{section.6}% 10
+\BOOKMARK [2][-]{subsection.6.2}{Training ConvNets}{section.6}% 11
+\BOOKMARK [2][-]{subsection.6.3}{Visualizing ConvNets}{section.6}% 12
+\BOOKMARK [1][-]{section.7}{DeNet - A new method for visualization}{}% 13
+\BOOKMARK [1][-]{section.8}{Comparing DeNet with Deconvolution}{}% 14
+\BOOKMARK [1][-]{section.9}{Conclusion}{}% 15
